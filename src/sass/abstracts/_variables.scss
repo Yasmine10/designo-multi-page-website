@@ -1,0 +1,31 @@
+/* Colors */
+
+$clr-primary-100: hsl(0, 0%, 100%);
+$clr-primary-400: hsl(11, 73%, 66%);
+$clr-primary-900: hsl(270, 3%, 11%);
+
+$clr-secondary-150: hsl(210, 17%, 95%);
+$clr-secondary-400: hsl(11, 100%, 80%);
+$clr-secondary-900: hsl(264, 5%, 20%);
+
+/* Typography */
+
+$font-sizes:(
+  'fs-h1': 3rem,
+  'fs-h2': 2.5rem,
+  'fs-h3': 1.25rem,
+  'fs-body': 1rem,
+  'fs-btn': 0.9375rem,
+  'fs-nav': 0.875rem,
+);
+
+$fw-regular: 400;
+$fw-bold: 500;
+
+/* Breakpoints */
+
+$breakpoints: (
+  'phone-max': ( max-width: 37.5em ),
+  'tablet': ( min-width: 48em ),
+  'desktop': ( min-width: 75em ),
+);
