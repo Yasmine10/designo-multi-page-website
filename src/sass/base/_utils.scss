@@ -1,0 +1,81 @@
+@use "../abstracts/" as *;
+
+.container {
+  --spacing: 24px;
+
+  width: calc(100% - (var(--spacing) * 2));
+  max-width: pxToRem(1440);
+  margin-inline: auto;
+
+  @include breakpoint('tablet') {
+    --spacing: 40px;
+  }
+
+  @include breakpoint('desktop') {
+    --spacing: 164px;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.txt-primary-100 {
+  color: $clr-primary-100;
+}
+.txt-primary-400 {
+  color: $clr-primary-400;
+}
+.txt-primary-900 {
+  color: $clr-primary-900;
+}
+.txt-secondary-150 {
+  color: $clr-secondary-150;
+}
+.txt-secondary-400 {
+  color: $clr-secondary-400;
+}
+.txt-secondary-800 {
+  color: $clr-secondary-900;
+}
+
+.bg-primary-100 {
+  background-color: $clr-primary-100;
+}
+.bg-primary-400 {
+  background-color: $clr-primary-400;
+}
+.bg-primary-900 {
+  background-color: $clr-primary-900;
+}
+.bg-secondary-150 {
+  background-color: $clr-secondary-150;
+}
+.bg-secondary-400 {
+  background-color: $clr-secondary-400;
+}
+.bg-secondary-900 {
+  background-color: $clr-secondary-900;
+}
+
+.fw-regular {
+  font-weight: $fw-regular;
+}
+.fw-bold {
+  font-weight: $fw-bold;
+}
+
+.txt-upper {
+  text-transform: uppercase;
+}
+.txt-center {
+  text-align: center;
+}
