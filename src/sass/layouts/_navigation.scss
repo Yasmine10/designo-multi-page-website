@@ -1,0 +1,45 @@
+@use "../abstracts/" as *;
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-block: pxToRem(64) pxToRem(67);
+
+  &__logo-container {
+    > img {
+      max-width: pxToRem(196);
+      max-height: pxToRem(24);
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    align-items: center;
+    gap: pxToRem(42);
+
+    > li a {
+      letter-spacing: 2px;
+    }
+  }
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@include breakpoint('phone-max') {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-list {
+    &.open {
+      display: block;
+    }
+    &.closed {
+      display: none;
+    }
+  }
+}

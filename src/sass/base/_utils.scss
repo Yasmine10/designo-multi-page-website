@@ -1,4 +1,4 @@
-@use "../abstracts/" as *;
+@use "../abstracts/_index" as *;
 
 .container {
   --spacing: 24px;
@@ -43,7 +43,7 @@
 .txt-secondary-400 {
   color: $clr-secondary-400;
 }
-.txt-secondary-800 {
+.txt-secondary-900 {
   color: $clr-secondary-900;
 }
 
