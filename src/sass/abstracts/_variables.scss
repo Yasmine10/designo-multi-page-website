@@ -19,6 +19,7 @@ $font-sizes:(
   'fs-body': 1rem,
   'fs-btn': 0.9375rem,
   'fs-nav': 0.875rem,
+  'fs-nav--mobile': 1.5rem,
 );
 
 $fw-regular: 400;
@@ -27,7 +28,7 @@ $fw-bold: 500;
 /* Breakpoints */
 
 $breakpoints: (
-  'phone-max': ( max-width: 37.5em ),
+  'phone-max': ( max-width: 47.9375em ),
   'tablet': ( min-width: 48em ),
   'desktop': ( min-width: 75em ),
 );

@@ -3,7 +3,7 @@
 .btn {
   background: none;
   border: none;
-  outline: none;
+  outline: transparent; // because then the button can still be used with keys when in color contrast mode
   text-decoration: none;
 
   display: inline-flex;
