@@ -7,6 +7,7 @@ import Contact from "./views/Contact.jsx";
 import NotFound from "./views/NotFound.jsx";
 
 import Navigation from "./components/Navigation.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
 
@@ -22,6 +23,8 @@ function App() {
 
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
+
+      <Footer />
     </div>
   );
 }

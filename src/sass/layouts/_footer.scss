@@ -1,0 +1,9 @@
+@use "../abstracts/" as *;
+
+.footer {
+  padding-block: pxToRem(64);
+  
+  &__navigation {
+
+  }
+}

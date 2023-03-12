@@ -18,7 +18,7 @@ function Navigation(props) {
 
     return(
       <header id="header" className="header">
-          <nav className="navigation | container">
+          <nav className="navigation | container" aria-label="Main">
               <Link to="/" className="navigation__logo-container"><img src={Logo} alt=""/></Link>
 
               <button
