@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import Logo from "../assets/shared/desktop/logo-dark.png";
 import { ReactComponent as IconHamburger } from "../assets/shared/mobile/icon-hamburger.svg"
@@ -18,8 +18,8 @@ function Navigation(props) {
 
     return(
       <header id="header" className="header">
-          <nav className="navigation | container">
-              <Link to="/" className="navigation__logo-container"><img src={Logo} alt=""/></Link>
+          <nav className="navigation | container" aria-label="Main">
+              <NavLink to="/" className="navigation__logo-container"><img src={Logo} alt=""/></NavLink>
 
               <button
                   type="submit"
@@ -32,9 +32,9 @@ function Navigation(props) {
               >{isToggled ? <IconClose /> : <IconHamburger />}</button>
 
               <ul id="nav-list" className={'navigation__nav-list ' + (isToggled ? 'open' : 'closed') + ' txt-secondary-900 txt-upper'}>
-                  <li><Link to="/our-company">Our company</Link></li>
-                  <li><Link to="/locations">Locations</Link></li>
-                  <li><Link to="/contact">Contact</Link></li>
+                  <li><NavLink to="/our-company">Our company</NavLink></li>
+                  <li><NavLink to="/locations">Locations</NavLink></li>
+                  <li><NavLink to="/contact">Contact</NavLink></li>
               </ul>
           </nav>
       </header>
