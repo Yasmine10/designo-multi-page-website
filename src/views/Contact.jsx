@@ -1,6 +1,6 @@
 function Contact(props) {
     return (
-        <main id="#main">
+        <main id="main" className="main">
             <h1>Contact</h1>
         </main>
     );
