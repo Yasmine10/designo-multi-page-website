@@ -2,8 +2,118 @@
 
 .footer {
   padding-block: pxToRem(64);
-  
-  &__navigation {
 
+  font-size: map-get($font-sizes, 'fs-footer');
+
+  @include breakpoint('phone-max') {
+    text-align: center;
+  }
+
+  &__navigation {
+    .logo-container {
+      img {
+        width: pxToRem(202);
+        height: pxToRem(27);
+
+        margin-inline: auto;
+      }
+    }
+
+    .footer-nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: pxToRem(32);
+
+      > li a {
+        font-size: map-get($font-sizes, 'fs-footer-sm');
+        letter-spacing: 2px;
+      }
+    }
+
+    @include breakpoint('phone-max') {
+      .logo-container {
+        margin-bottom: pxToRem(32);
+        padding-bottom: pxToRem(32);
+
+        border-bottom: 1px solid toHsla($clr-primary-100, 0.1);
+      }
+
+      .footer-nav-list {
+        margin-bottom: pxToRem(40);
+      }
+    }
+
+    @include breakpoint('tablet') {
+      > nav {
+        display: flex;
+        justify-content: space-between;
+
+        margin-bottom: pxToRem(32);
+        padding-bottom: pxToRem(40);
+
+        border-bottom: 1px solid toHsla($clr-primary-100, 0.1);
+      }
+
+      .footer-nav-list {
+        flex-direction: row;
+
+        > li a {
+          &:hover,
+          &:focus-visible,
+          &.active {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  &__contact-info {
+    opacity: 0.5;
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: pxToRem(16);
+
+      > li a {
+        &:hover,
+        &:focus {
+          svg {
+            path,
+            g {
+              fill: $clr-secondary-400;
+            }
+          }
+        }
+      }
+    }
+
+    @include breakpoint('phone-max') {
+      .address {
+        margin-bottom: pxToRem(40);
+      }
+
+      .social-links {
+        margin-top: pxToRem(40);
+      }
+    }
+
+    @include breakpoint('tablet') {
+      display: grid;
+      grid-template-columns: pxToRem(232) pxToRem(232) auto;
+      gap: pxToRem(10);
+
+      .social-links {
+        justify-self: flex-end;
+        align-self: flex-end;
+      }
+    }
+
+    @include breakpoint('desktop') {
+      grid-template-columns: pxToRem(350) pxToRem(350) auto;
+      gap: pxToRem(30);
+    }
   }
 }

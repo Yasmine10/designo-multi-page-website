@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 import Logo from "../assets/shared/desktop/logo-light.png";
 import { ReactComponent as IconFacebook } from "../assets/shared/desktop/icon-facebook.svg";
@@ -9,7 +9,7 @@ import { ReactComponent as IconInstagram } from "../assets/shared/desktop/icon-i
 
 function Footer() {
     return (
-      <footer className="footer | bg-secondary-900 txt-primary-100 txt-center">
+      <footer className="footer | bg-secondary-900 txt-primary-100">
         <div className="container">
             <section className="footer__navigation">
                 <nav aria-label="Main">
@@ -17,26 +17,26 @@ function Footer() {
                         <img src={Logo} alt="Designo"/>
                     </div>
 
-                    <ul className="footer-nav-list">
-                        <li><Link to="/our-company">Our company</Link></li>
-                        <li><Link to="/locations">Locations</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
+                    <ul className="footer-nav-list | txt-upper">
+                        <li><NavLink to="/our-company">Our company</NavLink></li>
+                        <li><NavLink to="/locations">Locations</NavLink></li>
+                        <li><NavLink to="/contact">Contact</NavLink></li>
                     </ul>
                 </nav>
             </section>
             <section className="footer__contact-info">
                 <div className="address">
-                    <p>Designo Central Office</p>
+                    <p className="fw-bold">Designo Central Office</p>
                     <p>3886 Wellington Street</p>
                     <p>Toronto, Ontario M9C 3J5</p>
                 </div>
+
                 <div className="contact">
-                    <p>Contact Us (Central Office)</p>
+                    <p className="fw-bold">Contact Us (Central Office)</p>
                     <p>P : +1 253-863-8967</p>
                     <p>M : contact@designo.co</p>
                 </div>
-            </section>
-            <section className="footer__socials">
+
                 <ul className="social-links">
                     <li>
                         <a href="#">
