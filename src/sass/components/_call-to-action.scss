@@ -1,0 +1,113 @@
+@use "../abstracts/" as *;
+
+.call-to-action {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        z-index: -1;
+
+        background-color: $clr-secondary-900;
+        width: 100%;
+        height: calc(50% + 1px);
+    }
+
+    > div {
+        padding: pxToRem(64) pxToRem(24);
+
+        border-radius: 15px;
+
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -30%;
+            right: -10%;
+
+            background-image: url('./src/assets/shared/mobile/bg-pattern-design-pages-intro-mobile.svg');
+            background-position: top center;
+            background-size: cover;
+
+            width: pxToRem(876);
+            height: pxToRem(584);
+        }
+    }
+
+    &__content {
+        margin-bottom: pxToRem(32);
+
+        position: relative;
+        z-index: 10;
+
+        > h2 {
+            margin-bottom: pxToRem(6);
+        }
+    }
+
+    &__btn {
+        position: relative;
+        z-index: 10;
+    }
+
+    @include breakpoint('tablet') {
+        > div {
+            padding: pxToRem(57);
+
+            &::before {
+                right: -25%;
+
+                background-image: url('./src/assets/shared/tablet/bg-pattern-design-pages-intro-tablet.svg');
+                background-position: top center;
+
+                transform: scaleY(-1);
+            }
+        }
+    }
+
+    @include breakpoint('tablet-max') {
+        > div {
+            text-align: center;
+        }
+
+        &__content {
+            > h2 {
+                max-width: pxToRem(335);
+                margin-inline: auto;
+                margin-bottom: pxToRem(16);
+            }
+            > p {
+                max-width: pxToRem(550);
+                margin-inline: auto;
+            }
+        }
+    }
+
+    @include breakpoint('desktop') {
+        > div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &::before {
+                top: -40%;
+                right: 0%;
+            }
+        }
+
+        &__content {
+            > h2 {
+                max-width: pxToRem(268);
+                margin-bottom: pxToRem(16);
+            }
+            > p {
+                max-width: pxToRem(459);
+            }
+        }
+    }
+}
