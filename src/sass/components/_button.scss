@@ -11,6 +11,8 @@
   width: fit-content;
   padding: pxToRem(18) pxToRem(24) pxToRem(16);
 
+  border-radius: 8px;
+
   font-size: map-get($font-sizes, 'fs-btn');
   font-weight: $fw-bold;
   line-height: 1.5;
