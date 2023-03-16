@@ -27,7 +27,7 @@ function App() {
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
 
-      {location.pathname != '/contact' ? <CallToAction /> : false}
+      {location.pathname !== '/contact' ? <CallToAction /> : false}
 
       <Footer />
     </div>
