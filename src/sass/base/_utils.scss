@@ -11,7 +11,23 @@
     --spacing: 40px;
   }
 
-  @include breakpoint('desktop') {
+  @include breakpoint('desktop-large') {
+    --spacing: 164px;
+  }
+}
+
+.container--full-mobile {
+  --spacing: 0;
+
+  width: calc(100% - (var(--spacing) * 2));
+  max-width: pxToRem(1440);
+  margin-inline: auto;
+
+  @include breakpoint('tablet') {
+    --spacing: 40px;
+  }
+
+  @include breakpoint('desktop-large') {
     --spacing: 164px;
   }
 }
@@ -81,4 +97,12 @@
 }
 .txt-center {
   text-align: center;
+}
+
+.spacing-l {
+  margin-bottom: pxToRem(120);
+
+  @include breakpoint('desktop') {
+    margin-bottom: pxToRem(160);
+  }
 }
