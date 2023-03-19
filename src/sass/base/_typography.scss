@@ -18,8 +18,13 @@ body {
 }
 
 .h1 {
-  font-size: map-get($font-sizes, 'fs-h1');
-  line-height: 1;
+  font-size: map-get($font-sizes, 'fs-h1--mobile');
+  line-height: 1.125;
+
+  @include breakpoint('tablet') {
+    font-size: map-get($font-sizes, 'fs-h1');
+    line-height: 1;
+  }
 }
 
 .h2 {

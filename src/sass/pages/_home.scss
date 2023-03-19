@@ -1,0 +1,133 @@
+@use "../abstracts/" as *;
+
+.home-hero {
+  background-color: $clr-primary-400;
+  padding-inline: pxToRem(24);
+
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    background-image: url('/src/assets/home/desktop/bg-pattern-hero-home.svg');
+    background-repeat: no-repeat;
+
+    width: pxToRem(640);
+    height: pxToRem(640);
+  }
+
+  &__content {
+    position: relative;
+
+    padding-top: pxToRem(80);
+
+    color: $clr-primary-100;
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: pxToRem(14);
+  }
+
+  &__btn {
+    margin-top: pxToRem(24);
+  }
+
+  &__img-container {
+    position: relative;
+    z-index: 10;
+
+    height: pxToRem(371);
+    margin-top: pxToRem(80);
+
+    > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      width: calc(100% - 48px);
+      height: pxToRem(573);
+      margin-inline: auto;
+
+      object-fit: contain;
+      object-position: center;
+
+      filter: drop-shadow(20px -40px 80px rgba(93, 2, 2, 0.497569));
+    }
+  }
+
+  @include breakpoint('tablet') {
+    border-radius: 15px;
+
+    &::before {
+      left: initial;
+      right: pxToRem(-122);
+    }
+
+    &__content {
+      padding-top: pxToRem(60);
+    }
+
+    &__title {
+      max-width: pxToRem(573);
+    }
+
+    &__text {
+      max-width: pxToRem(445);
+    }
+  }
+
+  @include breakpoint('tablet-desktop') {
+    &__title {
+      margin-inline: auto;
+    }
+
+    &__text {
+      margin-inline: auto;
+    }
+  }
+
+  @include breakpoint('desktop') {
+    display: flex;
+    justify-content: space-between;
+
+    padding-inline: pxToRem(96);
+
+    &::before {
+      top: 0;
+      right: 0;
+      transform: none;
+    }
+
+    &__content {
+      text-align: initial;
+
+      margin-block: pxToRem(145);
+    }
+
+    &__title {
+      max-width: pxToRem(540);
+      margin-bottom: pxToRem(32);
+    }
+
+    &__btn {
+      margin-top: pxToRem(40);
+    }
+
+    &__img-container {
+      width: pxToRem(284);
+
+      > img {
+        top: pxToRem(139);
+
+        width: pxToRem(284);
+      }
+    }
+  }
+}

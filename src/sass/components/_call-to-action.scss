@@ -45,7 +45,7 @@
         position: relative;
         z-index: 10;
 
-        > h2 {
+        > h2 {
             margin-bottom: pxToRem(6);
         }
     }
@@ -94,6 +94,8 @@
             justify-content: space-between;
             align-items: center;
 
+            padding: pxToRem(72) pxToRem(96);
+
             &::before {
                 top: -40%;
                 right: 0%;
@@ -101,6 +103,8 @@
         }
 
         &__content {
+            margin-bottom: 0;
+
             > h2 {
                 max-width: pxToRem(268);
                 margin-bottom: pxToRem(16);
