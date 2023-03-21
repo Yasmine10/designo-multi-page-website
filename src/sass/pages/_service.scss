@@ -11,10 +11,6 @@ $spacing-service: pxToRem(96);
         gap: pxToRem(40);
     }
 
-    &__item {
-
-    }
-
     @include breakpoint('desktop') {
         &__list {
             grid-template-columns: repeat(3, 1fr);
