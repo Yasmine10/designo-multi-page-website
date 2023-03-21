@@ -4,12 +4,14 @@ import servicesData from "../data/services.json";
 
 import Intro from "../components/service/Intro.jsx";
 import Project from "../components/service/Project.jsx";
+import OtherServices from "../components/service/OtherServices.jsx";
 
 function Service() {
 
     const params = useParams();
 
     const data = servicesData.filter(service => service.slug === params.service)[0];
+    const otherServicesData = servicesData.filter(service => service.slug !== params.service);
 
     return (
       <main id="main" className="main">
@@ -24,6 +26,8 @@ function Service() {
               ))}
             </ul>
           </section>
+
+          <OtherServices services={otherServicesData} />
       </main>
     );
 }

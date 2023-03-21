@@ -132,7 +132,8 @@
   }
 }
 
-.home-services {
+.home-services,
+.service-other-services {
   display: grid;
   grid-template-columns: 1fr;
   gap: pxToRem(24);
@@ -146,7 +147,7 @@
     overflow: hidden;
 
     &:hover,
-    &:focus {
+    &:focus-visible {
       .bg::before {
         background-color: toHsla($clr-primary-400, 0.8);
       }
@@ -225,6 +226,11 @@
   @include breakpoint('desktop') {
     &__service-link {
       max-height: pxToRem(308);
+    }
+
+    &.service {
+      grid-template-columns: repeat(2, 1fr);
+      gap: pxToRem(30);
     }
   }
 
