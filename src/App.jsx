@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import Home from "./views/Home.jsx";
+import Service from "./views/Service.jsx";
 import About from "./views/About.jsx";
 import Locations from "./views/Locations.jsx";
 import Contact from "./views/Contact.jsx";
@@ -20,6 +21,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/services/:service" element={<Service />} />
         <Route path="/our-company" element={<About />} />
         <Route path="/locations" element={<Locations />} />
         <Route path="/contact" element={<Contact />} />;

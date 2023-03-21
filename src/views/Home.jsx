@@ -5,7 +5,10 @@ import { ReactComponent as IllustrationPassionate} from "../assets/home/desktop/
 import { ReactComponent as IllustrationResourceful} from "../assets/home/desktop/illustration-resourceful.svg";
 import { ReactComponent as IllustrationFriendly} from "../assets/home/desktop/illustration-friendly.svg";
 
+import servicesData from "../data/services.json";
+
 function Home (props) {
+
     return (
         <main id="main" className="main">
             <section className="home-hero | container--full-mobile spacing-l">
@@ -17,6 +20,12 @@ function Home (props) {
                 <div className="home-hero__img-container">
                     <img src={HeroImg} alt=""/>
                 </div>
+            </section>
+
+            <section className="home-services">
+                { servicesData.map((service) => (
+                    <Link to={`/services/${service.slug}`}>{service.name}</Link>
+                ))}
             </section>
 
             <section className="home-sell-points | container spacing-l">
