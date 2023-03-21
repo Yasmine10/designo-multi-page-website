@@ -22,7 +22,7 @@ function Home (props) {
                 </div>
             </section>
 
-            <section className="home-services | container spacing-l">
+            <section className="home-services home | container spacing-l">
                 { servicesData.map((service) => (
                     <Link to={`/services/${service.slug}`} className="home-services__service-link">
                        <div className="bg">
