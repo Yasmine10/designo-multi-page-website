@@ -1,0 +1,26 @@
+@use "../abstracts/" as *;
+
+.project {
+    background-color: $clr-secondary-200;
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    &__img-container {
+
+    }
+
+    &__content {
+        padding: pxToRem(32) pxToRem(30);
+
+        text-align: center;
+    }
+
+    &__name {
+        margin-bottom: pxToRem(16);
+    }
+
+    &__text {
+        color: $clr-secondary-900;
+    }
+}

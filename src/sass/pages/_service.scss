@@ -1,0 +1,24 @@
+@use "../abstracts/" as *;
+
+$spacing-service: pxToRem(96);
+
+.service-projects {
+    margin-block: $spacing-service;
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: pxToRem(40);
+    }
+
+    &__item {
+
+    }
+
+    @include breakpoint('desktop') {
+        &__list {
+            grid-template-columns: repeat(3, 1fr);
+            gap: pxToRem(32) pxToRem(30);
+        }
+    }
+}
