@@ -1,8 +1,5 @@
 function Project(props) {
-
-    console.log(props.service);
-
-    return(
+    return (
         <article className="project">
             <div className="project__img-container">
                 <img src={`/src/assets/${props.service}/desktop/${props.project.image_path}`} alt="" />
