@@ -314,7 +314,7 @@
     }
   }
 
-  @include breakpoint('tablet-desktop') {
+  @media (min-width: 48em) and (max-width: 74.9375em)  {
     &__list {
       gap: pxToRem(32);
     }
