@@ -1,0 +1,41 @@
+[
+  {
+    "country": "Canada",
+    "slug": "canada",
+    "office_name": "Designo Central Office",
+    "address": {
+      "street": "Wellington Street",
+      "number": "3886",
+      "postal": "M9C 3J5",
+      "city": "Toronto"
+    },
+    "phone": "+1 253-863-8967",
+    "email": "contact@designo.co"
+  },
+  {
+    "country": "Australia",
+    "slug": "australia",
+    "office_name": "Designo AU Office",
+    "address": {
+      "street": "Balonne Street",
+      "number": "19",
+      "postal": "2443",
+      "city": "New South Wales"
+    },
+    "phone": "(02) 6720 9092",
+    "email": "contact@designo.au"
+  },
+  {
+    "country": "United Kingdom",
+    "slug": "united-kingdom",
+    "office_name": "Designo UK Office",
+    "address": {
+      "street": "Colorado Way",
+      "number": "13",
+      "postal": "SA8 9GA",
+      "city": "Rhyd-y-fro"
+    },
+    "phone": "078 3115 1400",
+    "email": "contact@designo.uk"
+  }
+]

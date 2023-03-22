@@ -1,7 +1,9 @@
+import Locations from "../components/Locations.jsx";
+
 function About(props) {
     return (
         <main id="main" className="main">
-            <h1>About</h1>
+            <Locations />
         </main>
     );
 }
