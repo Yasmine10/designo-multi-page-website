@@ -1,4 +1,4 @@
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Logo from "../assets/shared/desktop/logo-light.png";
 import { ReactComponent as IconFacebook } from "../assets/shared/desktop/icon-facebook.svg";
@@ -18,9 +18,9 @@ function Footer() {
                     </div>
 
                     <ul className="footer-nav-list | txt-upper">
-                        <li><NavLink to="/our-company">Our company</NavLink></li>
-                        <li><NavLink to="/locations">Locations</NavLink></li>
-                        <li><NavLink to="/contact">Contact</NavLink></li>
+                        <li><Link to="/our-company">Our company</Link></li>
+                        <li><Link to="/locations">Locations</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
                     </ul>
                 </nav>
             </section>
