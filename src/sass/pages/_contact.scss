@@ -1,0 +1,100 @@
+@use "../abstracts/" as *;
+
+.contact-intro-form {
+  padding: pxToRem(72) pxToRem(24);
+
+  display: flex;
+  flex-direction: column;
+  gap: pxToRem(48);
+
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30%;
+
+    background-image: url('/src/assets/contact/mobile/bg-pattern-hero-contact-mobile.svg');
+    background-repeat: no-repeat;
+
+    width: pxToRem(876);
+    height: pxToRem(990);
+  }
+
+  &__intro {
+    text-align: center;
+
+    position: relative;
+    z-index: 1;
+
+    .title {
+      text-transform: capitalize;
+      margin-bottom: pxToRem(24);
+    }
+  }
+
+  &__form {
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-form__btn {
+    display: flex;
+    justify-content: center;
+
+    min-width: pxToRem(152);
+    margin-top: pxToRem(40);
+    margin-inline: auto;
+  }
+
+  @include breakpoint('tablet') {
+    gap: pxToRem(40);
+
+    padding: pxToRem(72) pxToRem(58);
+
+    border-radius: 15px;
+
+    &::before {
+      top: -10%;
+      left: -10%;
+
+      background-image: url('/src/assets/contact/desktop/bg-pattern-hero-desktop.svg');
+
+      width: pxToRem(640);
+      height: pxToRem(640);
+    }
+
+    &__intro {
+      text-align: start;
+
+      .title {
+        margin-bottom: pxToRem(32);
+      }
+    }
+
+    .contact-form__btn {
+      margin-inline: initial;
+      margin-left: auto;
+    }
+  }
+
+  @include breakpoint('desktop') {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr ;
+    gap: pxToRem(95);
+
+    padding: pxToRem(54) pxToRem(96);
+
+    &::before {
+      top: initial;
+      bottom: 0;
+      left: 0;
+    }
+
+    &__intro {
+      align-self: center;
+    }
+  }
+}

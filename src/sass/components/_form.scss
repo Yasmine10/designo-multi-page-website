@@ -1,0 +1,58 @@
+@use "../abstracts/" as *;
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+
+  padding-bottom: pxToRem(11);
+  border-bottom: 1px solid $clr-primary-100;
+
+  &:not(:last-of-type) {
+    margin-bottom: pxToRem(24);
+  }
+
+  > input,
+  > textarea {
+    background-color: transparent;
+    border: none;
+    outline: transparent;
+
+    padding-left: pxToRem(14);
+
+    color: $clr-primary-100;
+    caret-color: $clr-primary-100;
+
+    &::placeholder {
+      opacity: 1 !important;
+      color: toHsla($clr-primary-100, 0.6) !important;
+    }
+  }
+
+  .input-error {
+    display: none;
+  }
+
+  &.invalid .input-error {
+    display: flex;
+  }
+}
+
+.input-error {
+  display: flex;
+  align-items: center;
+
+  padding-right: pxToRem(37);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: pxToRem(4);
+    right: pxToRem(8);
+
+    background-image: url('/src/assets/contact/desktop/icon-error.svg');
+    background-repeat: no-repeat;
+
+    width: pxToRem(20);
+    height: pxToRem(20);
+  }
+}
