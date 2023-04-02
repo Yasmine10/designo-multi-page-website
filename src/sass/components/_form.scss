@@ -1,0 +1,75 @@
+@use "../abstracts/" as *;
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  gap: pxToRem(16);
+
+  padding-bottom: pxToRem(11);
+  border-bottom: 1px solid $clr-primary-100;
+
+  &:focus,
+  &:focus-within {
+    border-bottom-width: 3px;
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: pxToRem(24);
+  }
+
+  > input,
+  > textarea {
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    background-color: transparent;
+    border: none;
+    outline: transparent;
+
+    padding-left: pxToRem(14);
+
+    color: $clr-primary-100;
+    caret-color: $clr-primary-100;
+
+    &::placeholder {
+      opacity: 1 !important;
+      color: toHsla($clr-primary-100, 0.6) !important;
+    }
+  }
+
+  > textarea {
+    width: fit-content;
+    height: pxToRem(100);
+
+    resize: none;
+  }
+}
+
+.input-error {
+  display: none;
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  padding-top: pxToRem(4);
+  padding-right: pxToRem(37);
+
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: pxToRem(4);
+    right: pxToRem(8);
+
+    background-image: url('/src/assets/contact/desktop/icon-error.svg');
+    background-repeat: no-repeat;
+
+
+    width: pxToRem(20);
+    height: pxToRem(20);
+  }
+
+  &.invalid {
+    display: flex;
+  }
+}
