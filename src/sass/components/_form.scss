@@ -7,6 +7,11 @@
   padding-bottom: pxToRem(11);
   border-bottom: 1px solid $clr-primary-100;
 
+  &:focus,
+  &:focus-within {
+    border-bottom-width: 3px;
+  }
+
   &:not(:last-of-type) {
     margin-bottom: pxToRem(24);
   }
@@ -27,21 +32,14 @@
       color: toHsla($clr-primary-100, 0.6) !important;
     }
   }
-
-  .input-error {
-    display: none;
-  }
-
-  &.invalid .input-error {
-    display: flex;
-  }
 }
 
 .input-error {
-  display: flex;
-  align-items: center;
+  display: none;
 
   padding-right: pxToRem(37);
+  position: relative;
+  padding-top: pxToRem(4);
 
   &::after {
     content: "";
@@ -49,10 +47,20 @@
     top: pxToRem(4);
     right: pxToRem(8);
 
+    opacity: 0;
+
     background-image: url('/src/assets/contact/desktop/icon-error.svg');
     background-repeat: no-repeat;
 
     width: pxToRem(20);
     height: pxToRem(20);
+  }
+
+  &.invalid {
+    display: flex;
+
+    &::after {
+      opacity: 1;
+    }
   }
 }
