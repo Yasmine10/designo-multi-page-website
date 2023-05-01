@@ -1,0 +1,132 @@
+@use "../abstracts/" as *;
+
+.locations {
+	&__list {
+		display: grid;
+		align-items: flex-start;
+		gap: pxToRem(40);
+	}
+
+	&__item {
+		.content {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: pxToRem(24);
+
+			padding-block: pxToRem(80);
+
+			position: relative;
+			overflow: hidden;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+
+				background-image: url('/src/assets/shared/desktop/bg-pattern-three-circles.svg');
+				background-repeat: no-repeat;
+
+				width: pxToRem(584);
+				height: pxToRem(584);
+
+				transform: rotate(90deg);
+			}
+
+			> * {
+				z-index: 10;
+			}
+		}
+	}
+	@include breakpoint('phone-max') {
+		&__item {
+			.content {
+				> * {
+					text-align: center;
+				}
+			}
+		}
+	}
+
+	@include breakpoint('tablet') {
+		&__list {
+			gap: pxToRem(120);
+		}
+
+		&__item {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: pxToRem(24);
+
+			.map-container {
+				border-radius: $border-radius-m !important;
+				overflow: hidden;
+			}
+
+			.content {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: 1fr 2fr;
+				column-gap: pxToRem(30);
+
+				padding: pxToRem(88) pxToRem(75);
+
+				border-radius: $border-radius-m;
+
+				.title {
+					grid-column: 1 / span 2;
+				}
+				.address {
+					grid-column: 1 / 2;
+					grid-row: 2 / 3;
+				}
+				.contact-info {
+					grid-column: 2 / 3;
+					grid-row: 2 / 3;
+				}
+
+				&::before {
+					top: initial;
+					bottom: 0;
+					transform: rotate(0deg);
+				}
+			}
+		}
+	}
+
+	@include breakpoint('desktop') {
+		&__list {
+			gap: pxToRem(32);
+		}
+
+		&__item {
+			grid-template-columns: repeat(3, 1fr);
+
+			&:nth-of-type(odd) {
+				.map-container {
+					grid-column: 3 / 4;
+					grid-row: 1 / 2;
+				}
+				.content {
+					grid-column: 1 / span 2;
+					grid-row: 1 / 2;
+				}
+			}
+
+			&:nth-of-type(even) {
+				.map-container {
+					grid-column: 1 / 2;
+				}
+				.content {
+					grid-column: 2 / span 2;
+				}
+			}
+
+			.map-container > .leaflet-container {
+				height: 100% !important;
+			}
+		}
+	}
+}
+
