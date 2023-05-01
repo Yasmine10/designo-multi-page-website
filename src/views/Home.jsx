@@ -5,7 +5,10 @@ import { ReactComponent as IllustrationPassionate} from "../assets/home/desktop/
 import { ReactComponent as IllustrationResourceful} from "../assets/home/desktop/illustration-resourceful.svg";
 import { ReactComponent as IllustrationFriendly} from "../assets/home/desktop/illustration-friendly.svg";
 
+import servicesData from "../data/services.json";
+
 function Home (props) {
+
     return (
         <main id="main" className="main">
             <section className="home-hero | container--full-mobile spacing-l">
@@ -17,6 +20,32 @@ function Home (props) {
                 <div className="home-hero__img-container">
                     <img src={HeroImg} alt=""/>
                 </div>
+            </section>
+
+            <section className="home-services home | container spacing-l">
+                { servicesData.map((service) => (
+                    <Link to={`/services/${service.slug}`} className="home-services__service-link">
+                       <div className="bg">
+                            <picture>
+                                { service.slug === 'web-design' ?
+                                    <>
+                                        <source srcSet={`/src/assets/home/desktop/image-${service.slug}-large.jpg`} media="(min-width: 1440px)" />
+                                        <source srcSet={`/src/assets/home/desktop/image-${service.slug}-small.jpg`} media="(min-width: 1200px)" />
+                                    </>
+                                    :
+                                    <source srcSet={`/src/assets/home/desktop/image-${service.slug}.jpg`} media="(min-width: 1200px)" />
+                                }
+                                <source srcSet={`/src/assets/home/desktop/image-${service.slug}.jpg`} media="(min-width: 1200px)" />
+                                <source srcSet={`/src/assets/home/tablet/image-${service.slug}.jpg`} media="(min-width: 768px)" />
+                                <img src={`/src/assets/home/mobile/image-${service.slug}.jpg`} alt="" />
+                            </picture>
+                       </div>
+                       <div className="content">
+                            <h2 className="service-name | h2">{service.name}</h2>
+                            <p className="service-btn">View projects</p>
+                       </div>
+                    </Link>
+                ))}
             </section>
 
             <section className="home-sell-points | container spacing-l">

@@ -30,7 +30,7 @@
             top: -30%;
             right: -10%;
 
-            background-image: url('./src/assets/shared/mobile/bg-pattern-design-pages-intro-mobile.svg');
+            background-image: url('/src/assets/shared/mobile/bg-pattern-design-pages-intro-mobile.svg');
             background-position: top center;
             background-size: cover;
 
@@ -62,7 +62,7 @@
             &::before {
                 right: -25%;
 
-                background-image: url('./src/assets/shared/tablet/bg-pattern-design-pages-intro-tablet.svg');
+                background-image: url('/src/assets/shared/tablet/bg-pattern-design-pages-intro-tablet.svg');
                 background-position: top center;
 
                 transform: scaleY(-1);
@@ -106,7 +106,7 @@
             margin-bottom: 0;
 
             > h2 {
-                max-width: pxToRem(268);
+                max-width: pxToRem(300);
                 margin-bottom: pxToRem(16);
             }
             > p {

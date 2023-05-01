@@ -1,0 +1,80 @@
+@use "../abstracts/" as *;
+
+.locations-component {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: pxToRem(48);
+  }
+
+  &__item {
+    text-align: center;
+
+    .img-container {
+      display: flex;
+      justify-content: center;
+
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+
+        background: linear-gradient(90deg, rgba(93, 2, 2, 0.0001) 0%, rgba(93, 2, 2, 0.497569) 100%);
+        opacity: 0.2;
+
+        width: pxToRem(202);
+        margin-inline: auto;
+        aspect-ratio: 1 / 1;
+
+        border-radius: 50%;
+      }
+    }
+
+    &:nth-of-type(1) {
+      .img-container {
+        &::after {
+          transform: matrix(0, -1, -1, 0, 0, 0);
+        }
+      }
+    }
+    &:nth-of-type(2) {
+      .img-container {
+        &::after {
+          transform: matrix(-1, 0, 0, 1, 0, 0);
+        }
+      }
+    }
+    &:nth-of-type(3) {
+      .img-container {
+        &::after {
+          transform: matrix(0, 1, 1, 0, 0, 0);
+        }
+      }
+    }
+
+    .content {
+      margin-top: pxToRem(48);
+
+      .title {
+        margin-bottom: pxToRem(32);
+      }
+    }
+  }
+
+  @include breakpoint('tablet') {
+    &__list {
+      gap: pxToRem(58);
+    }
+  }
+
+  @include breakpoint('desktop') {
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0 pxToRem(30);
+    }
+  }
+}

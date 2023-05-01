@@ -69,7 +69,11 @@
   }
 
   &__contact-info {
-    opacity: 0.5;
+
+    .address,
+    .contact {
+      opacity: 0.5;
+    }
 
     .social-links {
       display: flex;

@@ -2,6 +2,8 @@ import ImgHeroMobile from "../assets/about/mobile/image-about-hero.jpg";
 import ImgHeroTablet from "../assets/about/tablet/image-about-hero.jpg";
 import ImgHeroDesktop from "../assets/about/desktop/image-about-hero.jpg";
 
+import Locations from "../components/Locations.jsx";
+
 function About(props) {
     return (
         <main id="main" className="main">
@@ -20,6 +22,8 @@ function About(props) {
                         experiences that connect with our clients’ audiences.</p>
                 </div>
             </section>
+
+            <Locations />
         </main>
     );
 }

@@ -1,0 +1,94 @@
+@use "../abstracts/" as *;
+
+$spacing-service: pxToRem(96);
+
+.service-intro {
+    background-color: $clr-primary-400;
+    padding: pxToRem(105) pxToRem(24);
+
+    text-align: center;
+    color: $clr-primary-100;
+
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+
+        background-repeat: no-repeat;
+
+        width: pxToRem(876);
+        height: pxToRem(584);
+    }
+
+    &.web-design::before {
+        background-image: url('/src/assets/web-design/desktop/bg-pattern-intro-web.svg');
+    }
+    &.app-design::before {
+        background-image: url('/src/assets/app-design/desktop/bg-pattern-intro-app.svg');
+    }
+    &.graphic-design::before {
+        background-image: url('/src/assets/graphic-design/desktop/bg-pattern-intro-graphic.svg');
+    }
+
+    &__title {
+        margin-bottom: pxToRem(24);
+    }
+
+    @include breakpoint('tablet') {
+        padding: pxToRem(64) 0;
+        border-radius: 15px;
+
+        &::before {
+            top: 50%;
+            right: -20%;
+            transform: translateY(-50%);
+        }
+
+        &__text {
+            max-width: pxToRem(400);
+            margin-inline: auto;
+        }
+    }
+
+    @include breakpoint('desktop') {
+        &.app-design::before {
+            right: initial;
+            left: -5%;
+
+            background-image: url('/src/assets/app-design/desktop/bg-pattern-intro-app.svg');
+        }
+        &.graphic-design::before {
+            right: initial;
+            left: -5%;
+
+            background-image: url('/src/assets/graphic-design/desktop/bg-pattern-intro-graphic.svg');
+        }
+    }
+}
+
+.service-projects {
+    margin-block: $spacing-service;
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: pxToRem(40);
+    }
+
+    @include breakpoint('desktop') {
+        &__list {
+            grid-template-columns: repeat(3, 1fr);
+            gap: pxToRem(32) pxToRem(30);
+        }
+    }
+}
+
+.service-other-services {
+    margin-bottom: $spacing-service;
+}
