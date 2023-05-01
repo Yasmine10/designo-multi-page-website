@@ -1,0 +1,119 @@
+@use "../abstracts/" as *;
+
+.about-hero {
+  &__img-container {
+    min-width: 100%;
+
+    picture {
+      width: 100%;
+    }
+
+    img {
+      min-width: 100%;
+      width: 100%;
+      height: pxToRem(320);
+
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__content {
+    padding: pxToRem(80) pxToRem(24);
+
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -35%;
+      right: 0;
+
+      background-image: url('/src/assets/about/mobile/bg-pattern-hero-about-mobile.svg');
+      background-repeat: no-repeat;
+
+      width: pxToRem(876);
+      height: pxToRem(946);
+    }
+
+    > * {
+      position: relative;
+      z-index: 10;
+    }
+
+    .title {
+      margin-bottom: pxToRem(24);
+    }
+  }
+
+  @include breakpoint('tablet') {
+    border-radius: $border-radius-m;
+
+    overflow: hidden;
+
+    &__content {
+      padding: pxToRem(64) pxToRem(58);
+
+      &::before {
+        top: initial;
+        bottom: 100px;
+        right: 25%;
+
+        background-image: url('/src/assets/about/desktop/bg-pattern-hero-about-desktop.svg');
+
+        width: pxToRem(640);
+        height: pxToRem(640);
+      }
+    }
+  }
+
+  @include breakpoint('desktop') {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+
+    &__img-container {
+      grid-column: 2 / 3;
+
+      height: 100%;
+
+      img {
+        height: 100%;
+        max-height: pxToRem(480);
+      }
+    }
+
+    &__content {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+
+      text-align: start;
+      overflow: initial;
+
+      height: 100%;
+      padding: 0 pxToRem(82) 0 pxToRem(95);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &::before {
+        top: initial;
+        bottom: 0;
+        right: 0;
+
+        background-image: url('/src/assets/about/desktop/bg-pattern-hero-about-desktop.svg');
+
+        width: pxToRem(640);
+        height: pxToRem(640);
+      }
+
+      .title {
+        margin-bottom: pxToRem(32);
+      }
+    }
+  }
+  
+}
