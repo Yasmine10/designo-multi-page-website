@@ -28,3 +28,15 @@
 #footer {
   flex-shrink: 0;
 }
+
+.custom-marker {
+  display: block;
+
+  background-image: url('/src/assets/shared/desktop/icon-map.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  width: pxToRem(48);
+  height: pxToRem(57);
+}
