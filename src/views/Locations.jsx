@@ -1,14 +1,10 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 import locationsData from "../data/locations.json";
-import { ReactComponent as IconMarker} from "/src/assets/shared/desktop/icon-facebook.svg";
 
 const { VITE_MAPBOX_USERNAME, VITE_MAPBOX_STYLE_ID, VITE_MAPBOX_ACCESS_TOKEN } = import.meta.env;
 
-
 function Locations(props) {
-    const position = [51.505, -0.09];
-
     const icon = L.divIcon({
         className: 'custom-icon',
         html: '<span class="custom-marker"></span>'
