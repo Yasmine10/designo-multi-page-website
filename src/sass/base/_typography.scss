@@ -30,7 +30,6 @@ body {
 .h2 {
   font-size: map-get($font-sizes, 'fs-h2--mobile');
   line-height: 1.125;
-  letter-spacing: 2px;
 
   @include breakpoint('tablet') {
     font-size: map-get($font-sizes, 'fs-h2');
