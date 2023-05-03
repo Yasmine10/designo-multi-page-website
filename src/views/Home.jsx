@@ -23,21 +23,21 @@ function Home (props) {
             </section>
 
             <section className="home-services home | container spacing-l">
-                { servicesData.map((service) => (
-                    <Link to={`/services/${service.slug}`} className="home-services__service-link">
+                { servicesData.map((service, index) => (
+                    <Link to={`/services/${service.slug}`} className="home-services__service-link" key={index}>
                        <div className="bg">
                             <picture>
                                 { service.slug === 'web-design' ?
                                     <>
-                                        <source srcSet={`/src/assets/home/desktop/image-${service.slug}-large.jpg`} media="(min-width: 1440px)" />
-                                        <source srcSet={`/src/assets/home/desktop/image-${service.slug}-small.jpg`} media="(min-width: 1200px)" />
+                                        <source srcSet={`assets/home/desktop/${service.images.large}`} media="(min-width: 1440px)" />
+                                        <source srcSet={`assets/home/desktop/${service.images.small}`} media="(min-width: 1200px)" />
                                     </>
                                     :
-                                    <source srcSet={`/src/assets/home/desktop/image-${service.slug}.jpg`} media="(min-width: 1200px)" />
+                                    <source srcSet={`assets/home/desktop/${service.image}`} media="(min-width: 1200px)" />
                                 }
-                                <source srcSet={`/src/assets/home/desktop/image-${service.slug}.jpg`} media="(min-width: 1200px)" />
-                                <source srcSet={`/src/assets/home/tablet/image-${service.slug}.jpg`} media="(min-width: 768px)" />
-                                <img src={`/src/assets/home/mobile/image-${service.slug}.jpg`} alt="" />
+                                <source srcSet={`assets/home/desktop/${service.image}`} media="(min-width: 1200px)" />
+                                <source srcSet={`assets/home/tablet/${service.image}`} media="(min-width: 768px)" />
+                                <img src={`assets/home/mobile/${service.image}`} alt="" />
                             </picture>
                        </div>
                        <div className="content">
