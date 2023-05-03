@@ -2,7 +2,6 @@
   {
     "country": "Canada",
     "slug": "canada",
-    "image": "/src/assets/shared/desktop/illustration-canada.svg",
     "office_name": "Designo Central Office",
     "address": {
       "street": "Wellington Street",
@@ -18,7 +17,6 @@
   {
     "country": "Australia",
     "slug": "australia",
-    "image": "/src/assets/shared/desktop/illustration-australia.svg",
     "office_name": "Designo AU Office",
     "address": {
       "street": "Balonne Street",
@@ -34,7 +32,6 @@
   {
     "country": "United Kingdom",
     "slug": "united-kingdom",
-    "image": "/src/assets/shared/desktop/illustration-united-kingdom.svg",
     "office_name": "Designo UK Office",
     "address": {
       "street": "Colorado Way",
