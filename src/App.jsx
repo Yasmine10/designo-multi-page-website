@@ -26,7 +26,7 @@ function App() {
         <Route path="/locations" element={<Locations />} />
         <Route path="/contact" element={<Contact />} />;
 
-        <Route path="*" element={<NotFound />}></Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       {location.pathname !== '/contact' ? <CallToAction /> : false}
