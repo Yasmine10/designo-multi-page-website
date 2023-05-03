@@ -1,15 +1,23 @@
 @use "../abstracts/" as *;
 
+body.scrolled {
+  @include breakpoint('phone-max') {
+    overflow: hidden;
+  }
+}
+
 #root.scrolled {
-  position: relative;
+  @include breakpoint('phone-max') {
+    position: relative;
 
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 9000;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 9000;
 
-    background-color: toHsla($clr-primary-900, 0.5);
+      background-color: toHsla($clr-primary-900, 0.5);
+    }
   }
 }
 

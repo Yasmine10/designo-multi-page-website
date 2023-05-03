@@ -29,10 +29,10 @@ function Navigation(props) {
 	useEffect(() => {
 		if (isToggled) {
 			document.getElementById("root").classList.add('scrolled');
-			document.body.style.overflow = 'hidden';
+			document.body.classList.add('scrolled');
 		} else {
 			document.getElementById("root").classList.remove('scrolled');
-			document.body.style.overflow = 'initial';
+			document.body.classList.remove('scrolled');
 		}
 	}, [isToggled]);
 
@@ -53,7 +53,7 @@ function Navigation(props) {
 
 				<ul id="nav-list" className={'navigation__nav-list ' + (isToggled ? 'open' : 'closed') + ' txt-secondary-900 txt-upper'} ref={refMobileMenu}>
 					{ navlinks.map(({link, text}, index) => (
-						<li key={index}><NavLink to={link} onClick={toggle}>{text}</NavLink></li>
+						<li key={index}><NavLink to={link} onClick={window.matchMedia('(max-width: 767px)').matches ? toggle : false}>{text}</NavLink></li>
 					))}
 				</ul>
 			</nav>
