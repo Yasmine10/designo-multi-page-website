@@ -9,7 +9,7 @@ function Locations() {
 				{ locationsData.map((location, index) => (
 					<li className="locations-component__item" key={index}>
 						<div className="img-container">
-							<img src={`./src/assets/shared/desktop/illustration-${location.slug}.svg`} alt=""/>
+							<img src={location.image} alt=""/>
 						</div>
 						<div className="content">
 							<h2 className="title | h3">{location.country}</h2>
