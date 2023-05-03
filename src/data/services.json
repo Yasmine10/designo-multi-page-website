@@ -2,6 +2,11 @@
     {
         "name": "Web design",
         "slug": "web-design",
+        "image": "image-web-design_.jpg",
+        "images": {
+            "large": "image-web-design-large_.jpg",
+            "small": "image-web-design-small_.jpg"
+        },
         "intro_text": "We build websites that serve as powerful marketing tools and bring memorable brand experiences.",
         "projects": [
             {
@@ -39,6 +44,7 @@
     {
         "name": "App design",
         "slug": "app-design",
+        "image": "image-app-design_.jpg",
         "intro_text": "Our mobile designs bring intuitive digital solutions to your customers right at their fingertips.",
         "projects": [
             {
@@ -71,6 +77,7 @@
     {
         "name": "Graphic design",
         "slug": "graphic-design",
+        "image": "image-graphic-design_.jpg",
         "intro_text": "We deliver eye-catching branding materials that are tailored to meet your business objectives.",
         "projects": [
             {
