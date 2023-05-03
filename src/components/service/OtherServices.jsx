@@ -9,15 +9,15 @@ function OtherServices(props) {
                             <picture>
                                 { service.slug === 'web-design' ?
                                     <>
-                                        <source srcSet={`/src/assets/home/desktop/image-${service.slug}-large.jpg`} media="(min-width: 1440px)" />
-                                        <source srcSet={`/src/assets/home/desktop/image-${service.slug}-small.jpg`} media="(min-width: 1200px)" />
+                                        <source srcSet={`../../assets/home/desktop/image-${service.slug}-large.jpg`} media="(min-width: 1440px)" />
+                                        <source srcSet={`../../assets/home/desktop/image-${service.slug}-small.jpg`} media="(min-width: 1200px)" />
                                     </>
                                     :
-                                    <source srcSet={`/src/assets/home/desktop/image-${service.slug}.jpg`} media="(min-width: 1200px)" />
+                                    <source srcSet={`../../assets/home/desktop/image-${service.slug}.jpg`} media="(min-width: 1200px)" />
                                 }
-                                <source srcSet={`/src/assets/home/desktop/image-${service.slug}.jpg`} media="(min-width: 1200px)" />
-                                <source srcSet={`/src/assets/home/tablet/image-${service.slug}.jpg`} media="(min-width: 768px)" />
-                                <img src={`/src/assets/home/mobile/image-${service.slug}.jpg`} alt="" />
+                                <source srcSet={`../../assets/home/desktop/image-${service.slug}.jpg`} media="(min-width: 1200px)" />
+                                <source srcSet={`../../assets/home/tablet/image-${service.slug}.jpg`} media="(min-width: 768px)" />
+                                <img src={`../../assets/home/mobile/image-${service.slug}.jpg`} alt="" />
                             </picture>
                        </div>
                        <div className="content">
