@@ -13,9 +13,9 @@ function Footer() {
         <div className="container">
             <section className="footer__navigation">
                 <nav aria-label="Main">
-                    <div className="logo-container">
+                    <Link to="/" className="logo-container">
                         <img src={Logo} alt="Designo"/>
-                    </div>
+                    </Link>
 
                     <ul className="footer-nav-list | txt-upper">
                         <li><Link to="/our-company">Our company</Link></li>
