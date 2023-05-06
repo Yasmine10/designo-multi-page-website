@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import servicesData from "../data/services.json";
 
 import Project from "../components/service/Project.jsx";
-import OtherServices from "../components/service/OtherServices.jsx";
+import OtherServices from "../components/OtherServices.jsx";
 
 function Service() {
 
