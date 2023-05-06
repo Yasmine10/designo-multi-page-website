@@ -16,9 +16,11 @@ function Service() {
 
     return (
       <main id="main" className="main">
-          <section className={`service-intro ${serviceData.slug} | container--full-mobile spacing-l`}>
-              <h1 className="service-intro__title | h1">{serviceData.name}</h1>
-              <p className="service-intro__text">{serviceData.intro_text}</p>
+          <section className="service-intro | spacing-l">
+              <div className={`service-intro__container ${serviceData.slug} | container--full-mobile`}>
+                  <h1 className="service-intro__title | h1">{serviceData.name}</h1>
+                  <p className="service-intro__text">{serviceData.intro_text}</p>
+              </div>
           </section>
 
           <section className="service-projects | container spacing-l">
