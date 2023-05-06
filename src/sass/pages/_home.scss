@@ -1,24 +1,26 @@
 @use "../abstracts/" as *;
 
 .home-hero {
-  background-color: $clr-primary-400;
-  padding-inline: pxToRem(24);
+  &__container {
+    background-color: $clr-primary-400;
+    padding-inline: pxToRem(24);
 
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
 
-    background-image: url('/src/assets/home/desktop/bg-pattern-hero-home.svg');
-    background-repeat: no-repeat;
+      background-image: url('/src/assets/home/desktop/bg-pattern-hero-home.svg');
+      background-repeat: no-repeat;
 
-    width: pxToRem(640);
-    height: pxToRem(640);
+      width: pxToRem(640);
+      height: pxToRem(640);
+    }
   }
 
   &__content {
@@ -63,11 +65,13 @@
   }
 
   @include breakpoint('tablet') {
-    border-radius: 15px;
+    &__container {
+      border-radius: 15px;
 
-    &::before {
-      left: initial;
-      right: pxToRem(-122);
+      &::before {
+        left: initial;
+        right: pxToRem(-122);
+      }
     }
 
     &__content {
@@ -94,15 +98,33 @@
   }
 
   @include breakpoint('desktop') {
-    display: flex;
-    justify-content: space-between;
-
-    padding-inline: pxToRem(96);
+    position: relative;
 
     &::before {
-      top: 0;
-      right: 0;
-      transform: none;
+      content: "";
+      position: absolute;
+      bottom: -35%;
+      left: 0;
+      z-index: -1;
+
+      background-image: url('/src/assets/shared/desktop/bg-pattern-leaf.svg');
+      background-repeat: no-repeat;
+
+      width: pxToRem(1006);
+      height: pxToRem(594);
+    }
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+
+      padding-inline: pxToRem(96);
+
+      &::before {
+        top: 0;
+        right: 0;
+        transform: none;
+      }
     }
 
     &__content {
@@ -218,6 +240,23 @@
   }
 
   @include breakpoint('desktop') {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 30%;
+      right: 0;
+      z-index: -1;
+      transform: rotate(180deg);
+
+      background-image: url('/src/assets/shared/desktop/bg-pattern-leaf.svg');
+      background-repeat: no-repeat;
+
+      width: pxToRem(1006);
+      height: pxToRem(594);
+    }
+
     &__list {
       flex-direction: row;
       gap: pxToRem(30);
