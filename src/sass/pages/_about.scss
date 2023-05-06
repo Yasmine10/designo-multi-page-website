@@ -50,9 +50,11 @@
   }
 
   @include breakpoint('tablet') {
-    border-radius: $border-radius-m;
+    &__container {
+      border-radius: $border-radius-m;
 
-    overflow: hidden;
+      overflow: hidden;
+    }
 
     &__content {
       padding: pxToRem(64) pxToRem(58);
@@ -71,8 +73,26 @@
   }
 
   @include breakpoint('desktop') {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 70%;
+      left: 0;
+      z-index: -1;
+
+      background-image: url('/src/assets/shared/desktop/bg-pattern-leaf.svg');
+      background-repeat: no-repeat;
+
+      width: pxToRem(1006);
+      height: pxToRem(594);
+    }
+
+    &__container {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+    }
 
     &__img-container {
       grid-column: 2 / 3;
