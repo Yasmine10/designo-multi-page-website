@@ -7,8 +7,9 @@ import { ReactComponent as IllustrationFriendly} from "../assets/home/desktop/il
 
 import servicesData from "../data/services.json";
 
-function Home (props) {
+import OtherServices from "../components/OtherServices.jsx";
 
+function Home (props) {
     return (
         <main id="main" className="main">
             <section className="home-hero | container--full-mobile spacing-l">
@@ -22,31 +23,7 @@ function Home (props) {
                 </div>
             </section>
 
-            <section className="home-services home | container spacing-l">
-                { servicesData.map((service, index) => (
-                    <Link to={`/services/${service.slug}`} className="home-services__service-link" key={index}>
-                       <div className="bg">
-                            <picture>
-                                { service.slug === 'web-design' ?
-                                    <>
-                                        <source srcSet={`assets/home/desktop/${service.images.large}`} media="(min-width: 1440px)" />
-                                        <source srcSet={`assets/home/desktop/${service.images.small}`} media="(min-width: 1200px)" />
-                                    </>
-                                    :
-                                    <source srcSet={`assets/home/desktop/${service.image}`} media="(min-width: 1200px)" />
-                                }
-                                <source srcSet={`assets/home/desktop/${service.image}`} media="(min-width: 1200px)" />
-                                <source srcSet={`assets/home/tablet/${service.image}`} media="(min-width: 768px)" />
-                                <img src={`assets/home/mobile/${service.image}`} alt="" />
-                            </picture>
-                       </div>
-                       <div className="content">
-                            <h2 className="service-name | h2">{service.name}</h2>
-                            <p className="service-btn">View projects</p>
-                       </div>
-                    </Link>
-                ))}
-            </section>
+            <OtherServices services={servicesData} />
 
             <section className="home-sell-points | container spacing-l">
                 <ul className="home-sell-points__list">
