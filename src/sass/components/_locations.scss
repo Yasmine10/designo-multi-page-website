@@ -71,10 +71,33 @@
   }
 
   @include breakpoint('desktop') {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+
+      background-image: url('/src/assets/shared/desktop/bg-pattern-leaf.svg');
+      background-repeat: no-repeat;
+
+      width: pxToRem(1006);
+      height: pxToRem(594);
+    }
+
     &__list {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 0 pxToRem(30);
     }
+    
+    &.contact {
+      &::before {
+        top: 25%;
+        right: 0;
+      }
+    }
+
+    
   }
 }
