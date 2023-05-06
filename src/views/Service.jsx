@@ -11,20 +11,20 @@ function Service() {
     const params = useParams();
 
     const serviceData = services.filter(service => service.slug === params.service)[0];
-    const otherServicesData = services.filter(service => service.slug !== params.service);
     const projectsData = projects.filter(project => project.service_id === serviceData.id);
+    const otherServicesData = services.filter(service => service.slug !== params.service);
 
     return (
       <main id="main" className="main">
-          <section className={`service-intro ${serviceData.slug} | container--full-mobile`}>
+          <section className={`service-intro ${serviceData.slug} | container--full-mobile spacing-l`}>
               <h1 className="service-intro__title | h1">{serviceData.name}</h1>
               <p className="service-intro__text">{serviceData.intro_text}</p>
           </section>
 
-          <section className="service-projects | container">
+          <section className="service-projects | container spacing-l">
             <ul className="service-projects__list">
-              { projectsData.map((project) => (
-                <li className="service-projects__item">
+              { projectsData.map((project, index) => (
+                <li className="service-projects__item" key={index}>
                   <Project service={serviceData.slug} project={project} />
                 </li>
               ))}

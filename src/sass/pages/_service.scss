@@ -1,7 +1,5 @@
 @use "../abstracts/" as *;
 
-$spacing-service: pxToRem(96);
-
 .service-intro {
     background-color: $clr-primary-400;
     padding: pxToRem(105) pxToRem(24);
@@ -73,8 +71,6 @@ $spacing-service: pxToRem(96);
 }
 
 .service-projects {
-    margin-block: $spacing-service;
-
     &__list {
         display: grid;
         grid-template-columns: 1fr;
@@ -87,8 +83,4 @@ $spacing-service: pxToRem(96);
             gap: pxToRem(32) pxToRem(30);
         }
     }
-}
-
-.service-other-services {
-    margin-bottom: $spacing-service;
 }
